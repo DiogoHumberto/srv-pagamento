@@ -1,6 +1,6 @@
-package com.study.java.srvbcopgto.Model;
+package com.study.java.srvbcopgto.model;
 
-import com.study.java.srvbcopgto.Enum.StatusPgto;
+import com.study.java.srvbcopgto.enums.StatusPgto;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.UuidGenerator;

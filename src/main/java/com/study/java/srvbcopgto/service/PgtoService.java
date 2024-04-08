@@ -1,7 +1,7 @@
 package com.study.java.srvbcopgto.service;
 
-import com.study.java.srvbcopgto.Enum.StatusPgto;
-import com.study.java.srvbcopgto.Model.PagamentoModel;
+import com.study.java.srvbcopgto.enums.StatusPgto;
+import com.study.java.srvbcopgto.model.PagamentoModel;
 import com.study.java.srvbcopgto.dto.PagamentoDto;
 import com.study.java.srvbcopgto.repository.PagamentoRepositoy;
 import jakarta.persistence.EntityNotFoundException;

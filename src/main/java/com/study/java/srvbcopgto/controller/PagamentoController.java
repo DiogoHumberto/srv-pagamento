@@ -13,6 +13,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.net.URI;
 import java.util.UUID;
 
+import static com.study.java.srvbcopgto.utils.ConstantsUltils.RAABIT_EX_PAGAMENTO;
+
 @RestController
 @RequestMapping("/pagamento")
 @RequiredArgsConstructor
@@ -29,8 +31,8 @@ public class PagamentoController {
 
         URI url = uriBuilder.path("/pagamentos/{id}").buildAndExpand(respDto.getUuid()).toUri();
 
-        rabbitTemplate.convertAndSend("pagamento.concluido", respDto);
-       // rabbitTemplate.convertAndSend("pagamentos.ex","", respDto);
+        //enviando para todas as rotas - usando fanout
+        rabbitTemplate.convertAndSend(RAABIT_EX_PAGAMENTO,"", respDto);
 
         return ResponseEntity.created(url).body(respDto);
     }

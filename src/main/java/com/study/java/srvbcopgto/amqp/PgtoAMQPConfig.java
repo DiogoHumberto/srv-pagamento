@@ -15,10 +15,10 @@ import org.springframework.context.annotation.Configuration;
 public class PgtoAMQPConfig {
 
     //direciona - cria fila
-    @Bean
-    public Queue criarFila() {
-        return QueueBuilder.nonDurable("pagamento.concluido").build();
-    }
+//    @Bean
+//    public Queue criarFila() {
+//        return QueueBuilder.nonDurable("pagamento.concluido").build();
+//    }
 
     //configura conection
     @Bean
@@ -44,6 +44,5 @@ public class PgtoAMQPConfig {
         rabbitTemplate.setMessageConverter(messageConverter);
         return  rabbitTemplate;
     }
-
 
 }

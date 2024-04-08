@@ -1,4 +1,4 @@
-package com.study.java.srvbcopgto.Enum;
+package com.study.java.srvbcopgto.enums;
 
 public enum StatusPgto {
 

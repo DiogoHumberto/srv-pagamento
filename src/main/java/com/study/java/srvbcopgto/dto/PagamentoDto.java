@@ -1,7 +1,7 @@
 package com.study.java.srvbcopgto.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.study.java.srvbcopgto.Enum.StatusPgto;
+import com.study.java.srvbcopgto.enums.StatusPgto;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.*;
