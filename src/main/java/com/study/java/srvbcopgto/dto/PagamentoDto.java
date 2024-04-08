@@ -54,6 +54,7 @@ public class PagamentoDto {
     private Long tpPgtoId;
 
     //@NotNull
+    @JsonProperty("pedidoUuid")
     private UUID pedidoUuid;
 
 }

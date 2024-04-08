@@ -5,7 +5,6 @@ import com.study.java.srvbcopgto.service.PgtoService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
-import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +29,7 @@ public class PagamentoController {
 
         URI url = uriBuilder.path("/pagamentos/{id}").buildAndExpand(respDto.getUuid()).toUri();
 
-        rabbitTemplate.send("pagamento.concluido", new Message(("criando pagamento uuid " + respDto.getUuid()).getBytes()));
+        rabbitTemplate.convertAndSend("pagamento.concluido", respDto);
        // rabbitTemplate.convertAndSend("pagamentos.ex","", respDto);
 
         return ResponseEntity.created(url).body(respDto);
