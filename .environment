@@ -1,0 +1,1 @@
+DATABASE.URL=jdbc:postgresql://localhost:5432/bco-pgto?user=*&password=*
